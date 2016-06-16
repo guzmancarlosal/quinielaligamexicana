@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class GetNameInForeground extends AbstractGetnameTask{
 
-    public GetNameInForeground(MainActivity mActivity, String mEmail, String mScope) {
+    public GetNameInForeground(LoginActivity mActivity, String mEmail, String mScope) {
         super(mActivity, mEmail, mScope);
     }
 

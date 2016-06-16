@@ -49,7 +49,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends Activity {
 
-    Context mContext = MainActivity.this;
+    Context mContext = LoginActivity.this;
     AccountManager mAccountManager;
     String token;
     int serverCode;
@@ -72,7 +72,7 @@ public class LoginActivity extends Activity {
         return names;
     }
 
-    private AbstractGetnameTask getTask(MainActivity activity, String email, String scope) {
+    private AbstractGetnameTask getTask(LoginActivity activity, String email, String scope) {
         return new GetNameInForeground(activity, email, scope);
     }
 
@@ -80,13 +80,13 @@ public class LoginActivity extends Activity {
         if(isNetworkAvailable() == true) {
             String[] accountarrs = getAccountNames();
             if(accountarrs.length > 0) {
-                getTask(MainActivity.this, accountarrs[0], SCOPE).execute();
+                getTask(LoginActivity.this, accountarrs[0], SCOPE).execute();
             } else {
-                Toast.makeText(MainActivity.this, "No Google Account Sync!",
+                Toast.makeText(LoginActivity.this, "No Google Account Sync!",
                         Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(MainActivity.this, "No Network Service!",
+            Toast.makeText(LoginActivity.this, "No Network Service!",
                     Toast.LENGTH_SHORT).show();
         }
     }

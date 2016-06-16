@@ -19,13 +19,13 @@ import com.google.android.gms.auth.GoogleAuthUtil;
  */
 public abstract class AbstractGetnameTask extends AsyncTask<Void, Void, Void>{
 
-    protected MainActivity mActivity;
+    protected LoginActivity mActivity;
     public static String GOOGLE_USER_DATA = "No data";
     protected String mScope;
     protected String mEmail;
     protected int mRequest;
 
-    public AbstractGetnameTask(MainActivity mActivity, String mEmail, String mScope) {
+    public AbstractGetnameTask(LoginActivity mActivity, String mEmail, String mScope) {
         this.mActivity = mActivity;
         this.mEmail = mEmail;
         this.mScope = mScope;
